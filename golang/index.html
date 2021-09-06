@@ -1,102 +1,105 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>Go语言学习笔记 | 随便吧</title>
-<meta name="description" content="">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://stardust0083.github.io//favicon.ico?v=1630922135429">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://stardust0083.github.io//favicon.ico?v=1630922203539">
 <link rel="stylesheet" href="https://stardust0083.github.io//styles/main.css">
 
 
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
+    <meta name="description" content="Day1
+安装  https://golang.org/ windows直接安装，环境变量自动配置
+Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.ht..." />
+    <meta name="keywords" content="Gridea" />
   </head>
   <body>
     <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://stardust0083.github.io/">
-        <img class="avatar" src="https://stardust0083.github.io//images/avatar.png?v=1630922135429" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://stardust0083.github.io/">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://stardust0083.github.io/">
+        <img src="https://stardust0083.github.io//images/avatar.png?v=1630922203539" class="site-logo">
         <h1 class="site-title">随便吧</h1>
       </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
+    <div>
       
         
-          <a href="/" class="menu purple-link">
+          <a href="/" class="site-nav">
             首页
           </a>
         
       
         
-          <a href="/archives" class="menu purple-link">
+          <a href="/archives" class="site-nav">
             归档
           </a>
         
       
         
-          <a href="/tags" class="menu purple-link">
+          <a href="/tags" class="site-nav">
             标签
           </a>
         
       
         
-          <a href="/post/about" class="menu purple-link">
+          <a href="/post/about" class="site-nav">
             关于
           </a>
         
       
     </div>
   </div>
-</transition>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://stardust0083.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
 
 
-      <div class="content-container">
-        <div class="post-detail">
-          
-          <h2 class="post-title">Go语言学习笔记</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2018-12-12</span>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Go语言学习笔记</h2>
+            <div class="post-date">2018-12-12</div>
             
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://stardust0083.github.io/YGVvmsHUP/">
-                    Gridea
-                    
-                  </a>
-                
-              </span>
+              <div class="feature-container" style="background-image: url('https://stardust0083.github.io//post-images/golang.png')">
+              </div>
             
-          </div>
-          <div class="post-content">
-            <p>Day1<br>
+            <div class="post-content" v-pre>
+              <p>Day1<br>
 安装  https://golang.org/ windows直接安装，环境变量自动配置<br>
 Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.html<br>
 安装goimports  go install golang.org/x/tools/cmd/goimports@latest<br>
@@ -122,37 +125,30 @@ var s string 默认初始化零值，值为“”<br>
 var s = &quot;&quot; 设置初始值，用的不多，变量类型为初始值类型<br>
 var s string = &quot;&quot; 如果与初始值类型不同，变量类型必须</p>
 
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://stardust0083.github.io/YGVvmsHUP/" class="tag">
+                    Gridea
+                  </a>
+                
+              </div>
+            
+            
+
+            
+
           </div>
+
         </div>
-
-        
       </div>
-
-      
-
-      <div class="site-footer">
-  <div class="slogan"></div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://stardust0083.github.io//atom.xml" target="_blank">RSS</a>
-</div>
-
-
     </div>
-    <script type="application/javascript">
 
-hljs.initHighlightingOnLoad()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
 
 var app = new Vue({
   el: '#app',
@@ -162,6 +158,8 @@ var app = new Vue({
 })
 
 </script>
+
+
 
 
 
