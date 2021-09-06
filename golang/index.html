@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://stardust0083.github.io//favicon.ico?v=1630922203539">
+<link rel="shortcut icon" href="https://stardust0083.github.io//favicon.ico?v=1630922316039">
 <link rel="stylesheet" href="https://stardust0083.github.io//styles/main.css">
 
 
@@ -18,9 +18,9 @@
 
 
 
-    <meta name="description" content="Day1
+    <meta name="description" content="##Day1
 安装  https://golang.org/ windows直接安装，环境变量自动配置
-Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.ht..." />
+Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748...." />
     <meta name="keywords" content="Gridea" />
   </head>
   <body>
@@ -30,7 +30,7 @@ Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.ht..." />
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://stardust0083.github.io/">
-        <img src="https://stardust0083.github.io//images/avatar.png?v=1630922203539" class="site-logo">
+        <img src="https://stardust0083.github.io//images/avatar.png?v=1630922316039" class="site-logo">
         <h1 class="site-title">随便吧</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -99,7 +99,7 @@ Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.ht..." />
               </div>
             
             <div class="post-content" v-pre>
-              <p>Day1<br>
+              <p>##Day1<br>
 安装  https://golang.org/ windows直接安装，环境变量自动配置<br>
 Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.html<br>
 安装goimports  go install golang.org/x/tools/cmd/goimports@latest<br>
@@ -107,10 +107,11 @@ Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.html<br>
 {<br>
 &quot;fmt_cmd&quot; :[ &quot;goimports&quot;]<br>
 }<br>
-&quot;1.1&quot;<br>
+#1.1<br>
 Package main以及main函数：主程序<br>
 缺少包编译不通过(goimport可以自动import需要的包)<br>
 gofmt工具把代码格式化为标准格式<br>
+#1.2<br>
 不需要分号，但是换行符的位置需要注意，例如x+\n y正确x\n +y正确错误<br>
 os.Args变量 命令行读取，Args[0]为命令（程序路径），之后为参数数组，空格分开<br>
 +=，字符串加法同python<br>
@@ -120,10 +121,11 @@ for为唯一循环函数，initialization; condition; post，三者均可省略<
 使用range的形式：for _, arg := range os.Args[1:]<br>
 _空标识符，若使用局部变量则.\hello.go:10:6: tmp declared but not used<br>
 变量声明：<br>
-s := &quot;&quot; 短变量声明，仅用于函数内部<br>
-var s string 默认初始化零值，值为“”<br>
+s := &quot;&quot; 短变量声明，仅用于函数内部 常用<br>
+var s string 默认初始化零值，值为“”常用<br>
 var s = &quot;&quot; 设置初始值，用的不多，变量类型为初始值类型<br>
-var s string = &quot;&quot; 如果与初始值类型不同，变量类型必须</p>
+var s string = &quot;&quot; 如果与初始值类型不同，必须声明变量类型<br>
+#1.3</p>
 
             </div>
             
