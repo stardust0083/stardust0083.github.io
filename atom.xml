@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://stardust0083.github.io/</id>
     <title>随便吧</title>
-    <updated>2021-09-06T04:46:04.421Z</updated>
+    <updated>2021-09-06T09:55:02.733Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://stardust0083.github.io/"/>
     <link rel="self" href="https://stardust0083.github.io/atom.xml"/>
@@ -33,9 +33,31 @@
         <link href="https://stardust0083.github.io/golang/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
-        <content type="html"><![CDATA[<!-- more -->
-<p>Day1<br>
-安装</p>
+        <content type="html"><![CDATA[<p>Day1<br>
+安装  https://golang.org/ windows直接安装，环境变量自动配置<br>
+Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.html<br>
+安装goimports  go install golang.org/x/tools/cmd/goimports@latest<br>
+对应的GoSublime配置<br>
+{<br>
+&quot;fmt_cmd&quot; :[ &quot;goimports&quot;]<br>
+}<br>
+&quot;1.1&quot;<br>
+Package main以及main函数：主程序<br>
+缺少包编译不通过(goimport可以自动import需要的包)<br>
+gofmt工具把代码格式化为标准格式<br>
+不需要分号，但是换行符的位置需要注意，例如x+\n y正确x\n +y正确错误<br>
+os.Args变量 命令行读取，Args[0]为命令（程序路径），之后为参数数组，空格分开<br>
++=，字符串加法同python<br>
+i++与i--为语句，无返回值，同时--i不合法<br>
+:=是短变量声明<br>
+for为唯一循环函数，initialization; condition; post，三者均可省略<br>
+使用range的形式：for _, arg := range os.Args[1:]<br>
+_空标识符，若使用局部变量则.\hello.go:10:6: tmp declared but not used<br>
+变量声明：<br>
+s := &quot;&quot; 短变量声明，仅用于函数内部<br>
+var s string 默认初始化零值，值为“”<br>
+var s = &quot;&quot; 设置初始值，用的不多，变量类型为初始值类型<br>
+var s string = &quot;&quot; 如果与初始值类型不同，变量类型必须</p>
 ]]></content>
     </entry>
 </feed>
