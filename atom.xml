@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://stardust0083.github.io/</id>
-    <title>Gridea</title>
-    <updated>2021-09-06T04:08:51.210Z</updated>
+    <title>随便吧</title>
+    <updated>2021-09-06T04:11:09.242Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://stardust0083.github.io/"/>
     <link rel="self" href="https://stardust0083.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
     <logo>https://stardust0083.github.io/images/avatar.png</logo>
     <icon>https://stardust0083.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, 随便吧</rights>
     <entry>
         <title type="html"><![CDATA[机器学习笔记]]></title>
-        <id>https://stardust0083.github.io/post/ji-qi-xue-xi-bi-ji/</id>
-        <link href="https://stardust0083.github.io/post/ji-qi-xue-xi-bi-ji/">
+        <id>https://stardust0083.github.io/ji-qi-xue-xi-bi-ji/</id>
+        <link href="https://stardust0083.github.io/ji-qi-xue-xi-bi-ji/">
         </link>
         <updated>2021-09-06T04:06:47.000Z</updated>
         <content type="html"><![CDATA[<p>Day1</p>
@@ -21,8 +20,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Kaggle比赛笔记]]></title>
-        <id>https://stardust0083.github.io/post/kaggle-bi-sai-bi-ji/</id>
-        <link href="https://stardust0083.github.io/post/kaggle-bi-sai-bi-ji/">
+        <id>https://stardust0083.github.io/kaggle-bi-sai-bi-ji/</id>
+        <link href="https://stardust0083.github.io/kaggle-bi-sai-bi-ji/">
         </link>
         <updated>2021-09-06T04:06:31.000Z</updated>
         <content type="html"><![CDATA[<p>Day1</p>
@@ -30,8 +29,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Go语言学习笔记]]></title>
-        <id>https://stardust0083.github.io/post/golang/</id>
-        <link href="https://stardust0083.github.io/post/golang/">
+        <id>https://stardust0083.github.io/golang/</id>
+        <link href="https://stardust0083.github.io/golang/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <content type="html"><![CDATA[<!-- more -->
