@@ -3,10 +3,10 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Go语言学习笔记 | 随便吧</title>
-<link rel="shortcut icon" href="https://stardust0083.github.io//favicon.ico?v=1631032932394">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1631192451507">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://stardust0083.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Go语言学习笔记 | 随便吧 - Atom Feed" href="https://stardust0083.github.io//atom.xml">
+<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Go语言学习笔记 | 随便吧 - Atom Feed" href="http://localhost:4000/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -22,8 +22,8 @@ Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.ht..." />
     <div class="main">
       <div class="main-content">
         <div class="site-header">
-  <a href="https://stardust0083.github.io/">
-  <img class="avatar" src="https://stardust0083.github.io//images/avatar.png?v=1631032932394" alt="">
+  <a href="http://localhost:4000">
+  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1631192451507" alt="">
   </a>
   <h1 class="site-title">
     随便吧
@@ -83,10 +83,10 @@ Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.ht..." />
                 2021-09-06
               </span>
               <span>
-                4 min read
+                9 min read
               </span>
               
-                <a href="https://stardust0083.github.io/-tl1w4r4u/" class="post-tag">
+                <a href="http://localhost:4000/-tl1w4r4u/" class="post-tag">
                   # Golang
                 </a>
               
@@ -157,7 +157,108 @@ writer统一<br>
 类型名可以使用但容易混淆<br>
 命名规范：大小写而非下划线分割，缩略词全大写<br>
 函数内部定义 只在函数内部有效<br>
-函数外部定义 在当前包的所有文件中都可以访问，大写开头可在包外访问</p>
+函数外部定义 在当前包的所有文件中都可以访问，大写开头可在包外访问<br>
+##2.2<br>
+var、const、type和func 声明语句<br>
+函数的声明 函数名字、参数列表、一个可选的返回值列表、函数定义的函数体<br>
+var 变量名字 类型 = 表达式 类型与=表达式可以省略一个<br>
+表达式省略时零值 0 false nil “”等，根据数据类型<br>
+##2.3<br>
+###2.3.1<br>
+可以在一个声明语句中同时声明一组变量，表达式也可以为函数的返回值<br>
+包级别声明的变量会在main入口函数执行前完成初始化<br>
+名字 := 表达式 简短声明<br>
+简短变量声明左边的变量可能并不是全部都是刚刚声明的，若已声明则声明变为赋值，但是必须要存在新声明<br>
+###2.3.2<br>
+一个指针的值是另一个变量的地址。<br>
+p := &amp;x         // p, of type <em>int, points to x<br>
+<em>p = 2          // equivalent to x = 2<br>
+指针指向同一个变量或全部是nil时才相等<br>
+函数中局部电量地址被返回之后依然有效，因为指针p依然引用这个变量，每次运行内存地址均不同。<br>
+指针作为参数调用函数，可以通过指针改变变量值<br>
+flag.Parse()命令行分析<br>
+###2.3.3<br>
+new(T)创建一个T类型的匿名变量，初始化为T类型的零值，然后返回变量地址，返回的指针类型为</em>T<br>
+每次调用都是新的地址，如果两个类型都是空的，也就是说类型的大小是0，例如struct{}和 [0]int, 有可能有相同的地址<br>
+###2.3.4<br>
+包一级：整个程序的运行状态一致<br>
+局部变量：声明语句开始，变量不再被引用为止，然后变量的存储空间可能被回收。局部变量包括函数参数变量与返回值。<br>
+<em>代码风格<br>
+img.SetColorIndex(<br>
+size+int(x</em>size+0.5), size+int(y</em>size+0.5),<br>
+blackIndex, // 最后插入的逗号不会导致编译错误，这是Go编译器的一个特性<br>
+)               // 小括弧另起一行缩进，和大括弧的风格保存一致<br>
+从每个包级的变量和每个当前运行函数的每一个局部变量开始，通过指针或引用的访问路径遍历，是否可以找到该变量，若找不到则不可达，可以释放空间。<br>
+一个循环迭代内部的局部变量的生命周期可能超出其局部作用域。同时，局部变量可能在函数返回之后依然存在。<br>
+与C++不同，自动分配栈或者堆，并不是由用var还是new声明变量的方式决定的。<br>
+逃逸：在函数中的局部变量在函数结束时依旧可达<br>
+逃逸变量需要在堆中分配，而非逃逸的局部变量可以分配到站<br>
+##2.4<br>
+被赋值的变量放在=的左边，新值的表达式放在=的右边。<br>
+二元算术运算符和赋值语句的复合操作+=，-=，*=，/=等<br>
+###2.4.1<br>
+同时更新多个变量的值。<br>
+函数调用出现在元组赋值右边的表达式中时，右边不能再有其他的表达式，左边元素个数必须与右边返回值数目相等，不需要的用_丢弃。<br>
+###2.4.2<br>
+隐式赋值，函数参数，返回值，map，ch，数组等。一般数据类型必须完全匹配，nil可以赋值给任何指针或引用类型的变量。<br>
+##2.5<br>
+type 类型名字 底层类型 定义命名类型，需要从底层类型转化<br>
+定义一个String方法，print时优先使用string方法打印<br>
+##2.6<br>
+cannot find package &quot;src/tmpconv/tmpconv&quot; in GOROOT 错误<br>
+GO111MODULE设置为off，则会在gopath中搜索包<br>
+因为 gomod 和 gopath 两个包管理方案，并且相互不兼容有他没我那样。<br>
+在 gopath 查找包，按照 goroot 和多 gopath 目录下 src/xxx 依次查找。<br>
+在 gomod 下查找包，解析 go.mod 文件查找包，mod 包名就是包的前缀，里面的目录就后续路径了。<br>
+在 gomod 模式下，查找包就不会去 gopath 查找，只是 gomod 包缓存在 gopath/pkg/mod 里面。<br>
+https://learnku.com/go/t/43016<br>
+##2.7<br>
+句法块内部声明的名字是无法被外部块访问的。<br>
+内置的类型、函数和常量 比如int、len和true等是在全局作用域的<br>
+包级语法域 同一个包的任何源文件<br>
+导入的包 源文件级的作用域<br>
+声明语句 函数内部（甚至只能是局部的某些部分）访问<br>
+内部的一个声明可能屏蔽外部的声明<br>
+if或者switch条件部分为一个隐式词法域，然后是每个分支的词法域。<br>
+#3<br>
+##3.1<br>
+int8、int16、int32、int64、int<br>
+uint8、uint16、uint32、uint64、uint<br>
+rune=int32<br>
+byte=int8<br>
+uintptr容纳指针<br>
+有符号整数采用2的补码形式<br>
+优先级 注意逻辑运算与大于或</p>
+<ul>
+<li>
+<pre><code> /      %      &lt;&lt;       &gt;&gt;     &amp;       &amp;^
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>
+<pre><code> -      |      ^
+</code></pre>
+</li>
+</ul>
+<p>==     !=     &lt;      &lt;=       &gt;      &gt;=<br>
+&amp;&amp;<br>
+||<br>
+%取模运算符的符号和被取模数的符号总是一致的，因此-5%3和-5%-3结果都是-2<br>
+/两边为整则取整，其余为浮点<br>
+溢出丢弃高位<br>
+有符号数的右移运算会用符号位的值填充左边空缺的bit位<br>
+fmt.Printf(&quot;%d %[1]x %#[1]x %#[1]X\n&quot;, x) [1]表示多次使用第一个操作数x<br>
+字符面值通过一对单引号直接包含对应字符。<br>
+##3.2<br>
+正无穷大和负无穷大，分别用于表示太大溢出的数字和除零的结果<br>
+有NaN非数，一般用于表示无效的除法<br>
+math.IsNaN用于测试一个数是否是非数NaN<br>
+函数返回浮点数时最好增加一个err标志<br>
+##3.3<br>
+complex64和complex128对应float32与float64<br>
+real和imag函数分别返回复数的实部和虚部<br>
+<img src="http://localhost:4000/post-images/1631192446356.png" alt="" loading="lazy"></p>
 
               </div>
               <div class="toc-container">
@@ -182,7 +283,7 @@ writer统一<br>
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://stardust0083.github.io//atom.xml" target="_blank">
+  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">
     <i class="ri-rss-line"></i> RSS
   </a>
 </div>
