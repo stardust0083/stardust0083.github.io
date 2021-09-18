@@ -3,10 +3,10 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Go语言学习笔记 | 随便吧</title>
-<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1631192451507">
+<link rel="shortcut icon" href="https://stardust0083.github.io//favicon.ico?v=1631933184826">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Go语言学习笔记 | 随便吧 - Atom Feed" href="http://localhost:4000/atom.xml">
+<link rel="stylesheet" href="https://stardust0083.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Go语言学习笔记 | 随便吧 - Atom Feed" href="https://stardust0083.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -22,8 +22,8 @@ Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.ht..." />
     <div class="main">
       <div class="main-content">
         <div class="site-header">
-  <a href="http://localhost:4000">
-  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1631192451507" alt="">
+  <a href="https://stardust0083.github.io/">
+  <img class="avatar" src="https://stardust0083.github.io//images/avatar.png?v=1631933184826" alt="">
   </a>
   <h1 class="site-title">
     随便吧
@@ -83,10 +83,10 @@ Sublime Text+GoSublime  https://www.cnblogs.com/rainight/p/10244748.ht..." />
                 2021-09-06
               </span>
               <span>
-                9 min read
+                11 min read
               </span>
               
-                <a href="http://localhost:4000/-tl1w4r4u/" class="post-tag">
+                <a href="https://stardust0083.github.io/-tl1w4r4u/" class="post-tag">
                   # Golang
                 </a>
               
@@ -258,7 +258,26 @@ math.IsNaN用于测试一个数是否是非数NaN<br>
 ##3.3<br>
 complex64和complex128对应float32与float64<br>
 real和imag函数分别返回复数的实部和虚部<br>
-<img src="http://localhost:4000/post-images/1631192446356.png" alt="" loading="lazy"></p>
+<img src="https://stardust0083.github.io//post-images/1631192446356.png" alt="" loading="lazy"><br>
+color.RGBA定义使用｛｝<br>
+不能直接访问rgb值（结果是16bit），需要先转化为NRGBA<br>
+##3.4<br>
+&amp;&amp;的优先级比||高<br>
+如果运算符左边值已经可以确定整个布尔表达式的值，那么运算符右边的值将不再被求值<br>
+布尔值并不会隐式转换为数字值0或1,要用if<br>
+##3.5<br>
+内置的len函数可以返回一个字符串中的字节数目<br>
+&quot;我是谁&quot;len为9<br>
+超界会导致panic<br>
+比较的结果是字符串自然编码的顺序<br>
+尝试修改字符串内部数据的操作是被禁止的<br>
+s := &quot;我是谁&quot;    fmt.Println(s[0:3]) 结果为‘我’<br>
+双引号包含的字符串面值中，可以用以反斜杠\开头的转义序列插入任意的数据。<br>
+原生的字符串面值形式是<code>...</code>，使用反引号代替双引号。没有转义字符。<br>
+DecodeRuneInString函数都返回一个r和长度，r对应字符本身，长度对应r采用UTF8编码后的编码字节数目<br>
+如果是将一个[]rune类型的Unicode字符slice或数组转为string，则对它们进行UTF8编码<br>
+将一个整数转型为字符串意思是生成以只包含对应Unicode码点字符的UTF8字符串<br>
+\uFFFD无效字符作为替换</p>
 
               </div>
               <div class="toc-container">
@@ -283,7 +302,7 @@ real和imag函数分别返回复数的实部和虚部<br>
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">
+  <a class="rss" href="https://stardust0083.github.io//atom.xml" target="_blank">
     <i class="ri-rss-line"></i> RSS
   </a>
 </div>
